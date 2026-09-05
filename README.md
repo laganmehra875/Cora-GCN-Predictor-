@@ -23,9 +23,9 @@ The application is structured into a fast Python backend for model inference and
 graph TD
     subgraph Frontend [Web Interface - static/]
         UI(index.html / CSS / JS)
-        UI --> |Batch Inference Request| API_Node[/predict/cora_node]
-        UI --> |Custom Graph JSON| API_Custom[/predict]
-        UI --> |Model Metadata| API_Info[/info]
+        UI --> |Batch Inference Request| API_Node["/predict/cora_node"]
+        UI --> |Custom Graph JSON| API_Custom["/predict"]
+        UI --> |Model Metadata| API_Info["/info"]
     end
 
     subgraph Backend [FastAPI Server - main.py]
