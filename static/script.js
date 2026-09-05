@@ -15,7 +15,27 @@ document.addEventListener("DOMContentLoaded", () => {
   initCoraExplorer();
   initCustomPredictor();
   initModelInfo();
+  initTopicLegend();
 });
+
+// Initialize Topic Legend
+function initTopicLegend() {
+  const legendContainer = document.getElementById("topic-legend");
+  if (!legendContainer) return;
+  
+  Object.keys(TOPIC_CONFIG).forEach(topic => {
+    const config = TOPIC_CONFIG[topic];
+    const cleanLabel = topic.replace(/_/g, " ");
+    
+    const legendItem = document.createElement("div");
+    legendItem.className = "legend-item";
+    legendItem.innerHTML = `
+      <div class="legend-color-box" style="background-color: ${config.color}; box-shadow: 0 0 8px ${config.color};"></div>
+      <span>${cleanLabel}</span>
+    `;
+    legendContainer.appendChild(legendItem);
+  });
+}
 
 // --- Health Check ---
 async function initHealthCheck() {
