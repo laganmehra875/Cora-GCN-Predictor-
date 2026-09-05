@@ -13,6 +13,11 @@ This project provides an elegant frontend interface for exploring the famous **C
 
 ---
 
+###  Run the Website
+```bash
+
+```
+
 ## 🏗️ Project Architecture & Work Structure
 
 The application is structured into a fast Python backend for model inference and a vanilla web frontend for the interactive user experience.
